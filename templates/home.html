@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+
+
+    <section id="products">
+        <div class="product-list">
+            {% for obj in products %}
+            <div class="product-item">
+    
+                <img src="{{ obj.image.url }}" alt="{{ obj.name }}" style="max-width: 100%; height: auto;">
+
+                <h3>{{ obj.name }}</h3>
+                <p>₹ {{ obj.price }}</p>
+                <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-primary btn-custom">
+                    Add to Cart
+                </a>
+                <a href="{% url 'cart_detail' obj.id %}" class="btn btn-primary btn-custom">
+                    view
+                </a>   
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+  
+
+</main>
+{% endblock content %}

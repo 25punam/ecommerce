@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price per Unit</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>₹ {{ item.product.price }}</td>
+                
+                <td>
+                    <form method="post" action="{% url 'update_quantity' item.product.id %}" class="d-inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="quantity" value="{{ item.quantity }}">
+                        <button type="submit" name="action" value="decrease" style="background-color: black; color: white; border: none;"  class="btn btn-outline-secondary">
+                            <i class="fa-solid fa-circle-chevron-down"></i>
+                        </button>
+                        <span>{{ item.quantity }}</span>
+                        <button type="submit" name="action" value="increase" style="background-color: black; color: white; border: none;" class="btn btn-outline-secondary">
+                            <i class="fa-solid fa-circle-chevron-up"></i>
+                        </button>
+                    </form>
+                </td>
+
+                <td>₹ {{ item.total_price }}</td>
+                <td>
+                    <form method="post" action="{% url 'remove_from_cart' item.product.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+            {% empty %}
+            <tr class="no-items">
+                <td colspan="5">No items in your cart.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Total Amount : {{total}}</h3>
+
+{% endblock %}

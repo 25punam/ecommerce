@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <section id="product-detail" style="padding: 20px; background-color: #f9f9f9;">
+        <div class="product-container" style="max-width: 600px; margin: auto; padding: 20px; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px;">
+            <div class="product-image">
+                <img src="{{ detail.image.url }}" alt="{{ detail.name }}" style="width: 50%; height: auto; border-radius: 8px;">
+            </div>
+            <div class="product-info" style="margin-top: 15px;">
+                <h3 style="font-size: 24px; margin-bottom: 10px;">{{ detail.name }}</h3>
+                <p style="font-size: 16px; color: #666;">{{ detail.desc }}</p>
+                <p style="font-size: 20px; font-weight: bold; color: #333;">₹ {{ detail.price }}</p>
+                <a href="{% url 'add_to_cart' detail.id %}" class="btn btn-primary btn-custom">
+                    Add to Cart
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
