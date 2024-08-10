@@ -10,19 +10,21 @@
             <div class="product-item">
     
                 <img src="{{ obj.image.url }}" alt="{{ obj.name }}" style="max-width: 100%; height: auto;">
-
+                <br><br>
                 <h3>{{ obj.name }}</h3>
                 <p>₹ {{ obj.price }}</p>
-                <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-primary btn-custom">
+                <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-outline-dark">
                     Add to Cart
                 </a>
-                <a href="{% url 'cart_detail' obj.id %}" class="btn btn-primary btn-custom">
+                <a href="{% url 'cart_detail' obj.id %}" class="btn btn-outline-dark">
                     view
                 </a>   
             </div>
             {% endfor %}
         </div>
     </section>
+
+
   
 
 </main>

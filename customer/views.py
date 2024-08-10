@@ -40,7 +40,7 @@ def delete_product(request):
 
 def home(request):
     products = ProductModel.objects.all()
-    uusername = request.session.get('username', 'None')
+    username = request.session.get('username', 'None')
     return render(request, 'home.html', {'products': products})
 
 
@@ -52,11 +52,18 @@ def cart_detail(request, product_id):
 @login_required(login_url='/')
 def add_to_cart(request, product_id):
     product = ProductModel.objects.get(id=product_id)
-    cart_item = CartModel.objects.get_or_create(user=request.user, product=product)
+    cart_item, created = CartModel.objects.get_or_create(user=request.user, product=product)
     
+    if not created:
+        # If the item already exists in the cart, increase the quantity
+        cart_item.quantity += 1
+    else:
+        # If the item was just created, set the initial quantity
+        cart_item.quantity = 1
     
     cart_item.save()
     return redirect('order_list')
+
 
 
 @login_required(login_url='/')

@@ -1,52 +1,93 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    /* Set the background color for the entire page */
+    body {
+        background-color: #f0f0f0; /* Change to desired color */
+    }
 
-    <table>
-        <thead>
-            <tr>
-                <th>Product Name</th>
-                <th>Price per Unit</th>
-                <th>Quantity</th>
-                <th>Total</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in items %}
-            <tr>
-                <td>{{ item.product.name }}</td>
-                <td>₹ {{ item.product.price }}</td>
-                
-                <td>
-                    <form method="post" action="{% url 'update_quantity' item.product.id %}" class="d-inline">
-                        {% csrf_token %}
-                        <input type="hidden" name="quantity" value="{{ item.quantity }}">
-                        <button type="submit" name="action" value="decrease" style="background-color: black; color: white; border: none;"  class="btn btn-outline-secondary">
-                            <i class="fa-solid fa-circle-chevron-down"></i>
-                        </button>
-                        <span>{{ item.quantity }}</span>
-                        <button type="submit" name="action" value="increase" style="background-color: black; color: white; border: none;" class="btn btn-outline-secondary">
-                            <i class="fa-solid fa-circle-chevron-up"></i>
-                        </button>
-                    </form>
-                </td>
+    /* Style the table container to fit the page design */
+    table {
+        width: 100%; /* Make the table full width */
+        border-collapse: collapse; /* Remove gaps between borders */
+        background-color: #ffffff; /* Background color of the table */
+        margin: 20px 0; /* Add margin top and bottom */
+        border: 1px solid #dddddd; /* Table border */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    }
 
-                <td>₹ {{ item.total_price }}</td>
-                <td>
-                    <form method="post" action="{% url 'remove_from_cart' item.product.id %}">
-                        {% csrf_token %}
-                        <button type="submit">Remove</button>
-                    </form>
-                </td>
-            </tr>
-            {% empty %}
-            <tr class="no-items">
-                <td colspan="5">No items in your cart.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <h3>Total Amount : {{total}}</h3>
+    th, td {
+        padding: 12px; /* Cell padding for aesthetics */
+        text-align: left; /* Align text to the left */
+        border-bottom: 1px solid #dddddd; /* Border between rows */
+    }
+
+    th {
+        background-color: #f7f8f9; /* Header background color */
+        color: rgb(20, 6, 6); /* Header text color */
+    }
+
+    tr:hover {
+        background-color: #f1f1f1; /* Highlight row on hover */
+    }
+
+    .no-items {
+        text-align: center; /* Center the 'no items' message */
+        font-style: italic; /* Italicize the text */
+        color: #666; /* Grey out the text color */
+    }
+
+    button {
+        cursor: pointer; /* Change cursor to pointer on buttons */
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Price per Unit</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>₹ {{ item.product.price }}</td>
+
+            <td>
+                <form method="post" action="{% url 'update_quantity' item.product.id %}" class="d-inline">
+                    {% csrf_token %}
+                    <input type="hidden" name="quantity" value="{{ item.quantity }}">
+                    <button type="submit" name="action" value="decrease" class="btn btn-outline-secondary">
+                        <i class="fa-solid fa-circle-chevron-down"></i>
+                    </button>
+                    <span>{{ item.quantity }}</span>
+                    <button type="submit" name="action" value="increase" style="background-color: black; color: white; border: none;" class="btn btn-outline-secondary">
+                        <i class="fa-solid fa-circle-chevron-up"></i>
+                    </button>
+                </form>
+            </td>
+
+            <td>₹ {{ item.total_price }}</td>
+            <td>
+                <form method="post" action="{% url 'remove_from_cart' item.product.id %}">
+                    {% csrf_token %}
+                    <button type="submit">Remove</button>
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr class="no-items">
+            <td colspan="5">No items in your cart.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<h3>Total Amount : {{ total }}</h3>
 
 {% endblock %}
