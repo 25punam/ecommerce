@@ -1,6 +1,6 @@
 
 from django.shortcuts import render,redirect
-from .models import ProductModel, CartModel
+from .models import ProductModel, CartModel 
 from django.contrib.auth.decorators import login_required
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -95,3 +95,9 @@ def remove_from_cart(request, product_id):
     cart_item = CartModel.objects.get(user=request.user ,product_id=product_id)
     cart_item.delete()
     return redirect('order_list')
+
+
+@login_required(login_url='/')
+def checkout(request):
+  
+    return render(request,'checkout.html')

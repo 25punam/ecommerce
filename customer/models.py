@@ -26,19 +26,20 @@ class CartModel(models.Model):
     product = models.ForeignKey(ProductModel, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 
+
     def total_price(self):
         return self.quantity * self.product.price
-
+    
 
 class OrderModel(models.Model):
     cart = models.ForeignKey(CartModel, on_delete=models.CASCADE)
     order_date = models.DateTimeField(auto_now_add=True)
     quantity = models.PositiveIntegerField(default=1)
-    status = models.CharField(max_length=20, default='Pending')  # Added status field for order tracking
+    status = models.CharField(max_length=20, default='Pending')
 
     def __str__(self):
-        return f"Order for {self.cart.product.name} on {self.order_date}"
-
+        return f"Order {self.id} by {self.user.username}"
+    
 
 class CustomerPaymentDetails(models.Model):
     order = models.ForeignKey(OrderModel, on_delete=models.CASCADE)
@@ -59,12 +60,11 @@ class ProductReview(models.Model):
     comment = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    helpful_count = models.PositiveIntegerField(default=0)  # Added for tracking helpful votes
 
     def __str__(self):
         return f"Review for {self.product.name} by {self.user.name or self.user.username}"
     
-    
+
 
 
 

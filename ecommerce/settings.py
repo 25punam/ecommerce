@@ -28,6 +28,8 @@ SECRET_KEY = 'django-insecure-$8^=p0ib)98)$d!0)d)rs*qkkg$ug8awkf6_wm(ypd!qz$z9=)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     "rest_framework",
     'account',
     'customer',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -109,3 +112,8 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Set sandbox to True
+PAYPAL_TEST = True
+
+PAYPAL_RECEIVER_EMAIL =  '25punamgode@gmail.com'
