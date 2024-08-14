@@ -94,14 +94,15 @@
 </head>
 <body>
     <div class="checkout-container">
-        <form id="checkout-form">
+        <form action="{% url 'payment'%}" method="POST">
+            {% csrf_token %}
             <div class="layout">
                 <div class="billing-section">
                     <h3 class="section-title">Billing Information</h3>
                     <div class="form-group row">
                         <div class="col-6">
                             <label for="first-name" class="form-label">First Name</label>
-                            <input type="text" id="first-name" class="form-control" required placeholder="Enter your first name">
+                            <input type="text" id="first-name" name = "fname"class="form-control" required placeholder="Enter your first name">
                         </div>
                         <div class="col-6">
                             <label for="last-name" class="form-label">Last Name</label>
@@ -116,7 +117,7 @@
                         <label for="address" class="form-label">Shipping Address</label>
                         <input type="text" id="address" class="form-control" required placeholder="Enter your address">
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-6 form-group">
                             <label for="city" class="form-label">City</label>
                             <input type="text" id="city" class="form-control" required>
@@ -129,7 +130,7 @@
                     <div class="form-group">
                         <label for="zip" class="form-label">ZIP Code</label>
                         <input type="text" id="zip" class="form-control" required pattern="\d{5}">
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="info-section">

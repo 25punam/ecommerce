@@ -28,7 +28,7 @@ class CartModel(models.Model):
 
     def total_price(self):
         return self.quantity * self.product.price
-    
+
 
 class OrderModel(models.Model):
     cart = models.ForeignKey(CartModel, on_delete=models.CASCADE)
