@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "rest_framework",
     'account',
     'customer',
+    'products',
+    'checkout',
     'paypal.standard.ipn',
 ]
 
@@ -114,6 +116,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Set sandbox to True
-PAYPAL_TEST = True
+# PAYPAL_TEST = True
 
-PAYPAL_RECEIVER_EMAIL =  '25punamgode@gmail.com'
+# PAYPAL_RECEIVER_EMAIL =  '25punamgode@gmail.com'
