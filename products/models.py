@@ -28,8 +28,7 @@ class Order(models.Model):
     quantity = models.PositiveIntegerField(default=1)
     status = models.CharField(max_length=20, default='Pending')
 
-    def __str__(self):
-        return f"Order {self.id} by {self.user.username}"
+  
     
 
 
