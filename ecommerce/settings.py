@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "account",
-    "customer",
-    # 'paypal.standard.ipn',
+    'account',
+    'customer',
+    'products',
+    'checkout',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -116,4 +118,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Set sandbox to True
 # PAYPAL_TEST = True
 
-# PAYPAL_RECEIVER_EMAIL = "25punamgode@gmail.com"
+# PAYPAL_RECEIVER_EMAIL =  '25punamgode@gmail.com'
