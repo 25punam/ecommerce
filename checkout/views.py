@@ -1,13 +1,16 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
-from .models import Order, CustomerPaymentDetails
-from django.contrib.auth.models import User
-from products.models import CartModel  
+from .models import CustomerPaymentDetails
+from products.models import CartModel, Order
+from paypal.standard.forms import PayPalPaymentsForm
+from django.conf import settings
+from django.urls import reverse
 
 @login_required(login_url='/')
 def checkout(request):
     if request.method == "POST":
+        # Collect form data
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
@@ -17,20 +20,19 @@ def checkout(request):
         zip_code = request.POST.get('zip')
         payment_method = request.POST.get('payment-method')
 
+        # Retrieve cart items and calculate total price
         cart_items = CartModel.objects.filter(user=request.user)
-        if not cart_items.exists():
-            return redirect('order_list')
-
         total_price = sum(item.total_price() for item in cart_items)
 
+        # Create an order
         order = Order.objects.create(
             cart=cart_items.first(),
             quantity=cart_items.count()
         )
-        
+
+        # Generate transaction ID and save payment details
         transaction_id = f"TXN{datetime.now().strftime('%Y%m%d%H%M%S')}"
-        
-        payment_details = CustomerPaymentDetails.objects.create(
+        CustomerPaymentDetails.objects.create(
             order=order,
             user=request.user,
             amount=total_price,
@@ -44,15 +46,32 @@ def checkout(request):
             payment_method=payment_method
         )
 
+        # Clear the cart after order creation
+        cart_items.delete()
+
+        # Redirect to PayPal payment processing or order success
         if payment_method == 'paypal':
-            return redirect('/')  
-        
-        return redirect('order_success')  
-  
+            return redirect('process_paypal_payment', order_id=order.id, amount=total_price, user_id=request.user.id)
+        return redirect('order_success')
 
-    return render(request, 'checkout.html',)
+    return render(request, 'checkout.html')
 
+def process_paypal_payment(request, order_id, amount, user_id):
+    amount = float(amount)
+    paypal_dict = {
+        "business": settings.PAYPAL_RECEIVER_EMAIL,
+        "amount": f"{amount:.2f}",
+        "item_name": f"Order {order_id}",
+        "invoice": str(order_id),
+        "currency_code": "INR",
+        "notify_url": request.build_absolute_uri(reverse('paypal-ipn')),
+        "return_url": request.build_absolute_uri(reverse('order_success')),
+        "cancel_return": request.build_absolute_uri(reverse('checkout')),
+        "custom": str(user_id),
+    }
+
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    return render(request, 'process_paypal_payment.html', {'form': form})
 
 def order_success(request):
-    return render(request,"order_success.html")
-
+    return render(request, "order_success.html")

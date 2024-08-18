@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PayPal Payment</title>
+</head>
+<body>
+    <h1>Complete Your Payment</h1>
+    <p>Click the button below to complete your payment with PayPal.</p>
+    <form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Pay with PayPal">
+    </form>
+</body>
+</html>

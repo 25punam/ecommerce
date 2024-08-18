@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
+import paypalrestsdk
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -116,6 +118,8 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Set sandbox to True
-# PAYPAL_TEST = True
+PAYPAL_RECEIVER_EMAIL = 'sb-ihykf32215357@business.example.com'
 
-# PAYPAL_RECEIVER_EMAIL =  '25punamgode@gmail.com'
+PAYPAL_CLIENT_ID = 'AfhEvCeAYdzynyWTuDLzqDqhvYDSSQRojgORCWOG6hqDoOYN4KOQq61zRf_pV9gKcP3G0zg2FXvIiSaD'
+PAYPAL_SECRET = 'EEtuMSsm_A1YaLGoLKPkidKux0dT15UM1otq-8aweSjFd1yEUe8pDx46yOl_THRs_-N7Grlmcpk-NFDp'
+PAYPAL_TEST = True  
