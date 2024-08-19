@@ -6,11 +6,11 @@ from products.models import CartModel, Order
 from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
 from django.urls import reverse
+import uuid
 
 @login_required(login_url='/')
 def checkout(request):
     if request.method == "POST":
-        # Collect form data
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
@@ -20,18 +20,16 @@ def checkout(request):
         zip_code = request.POST.get('zip')
         payment_method = request.POST.get('payment-method')
 
-        # Retrieve cart items and calculate total price
         cart_items = CartModel.objects.filter(user=request.user)
         total_price = sum(item.total_price() for item in cart_items)
 
-        # Create an order
         order = Order.objects.create(
             cart=cart_items.first(),
             quantity=cart_items.count()
         )
 
-        # Generate transaction ID and save payment details
-        transaction_id = f"TXN{datetime.now().strftime('%Y%m%d%H%M%S')}"
+        transaction_id = str(uuid.uuid4())
+
         CustomerPaymentDetails.objects.create(
             order=order,
             user=request.user,
@@ -46,10 +44,8 @@ def checkout(request):
             payment_method=payment_method
         )
 
-        # Clear the cart after order creation
         cart_items.delete()
 
-        # Redirect to PayPal payment processing or order success
         if payment_method == 'paypal':
             return redirect('process_paypal_payment', order_id=order.id, amount=total_price, user_id=request.user.id)
         return redirect('order_success')

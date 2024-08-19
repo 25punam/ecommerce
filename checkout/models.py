@@ -16,6 +16,7 @@ class CustomerPaymentDetails(models.Model):
     state = models.CharField(max_length=100, null=True, blank=True)
     payment_method = models.CharField(max_length=50, null=True, blank=True)
 
+
     def __str__(self):
         return f"Payment of {self.amount} for Order {self.order.id} - Status: {self.status}"
 

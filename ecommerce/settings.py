@@ -118,8 +118,8 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Set sandbox to True
-PAYPAL_RECEIVER_EMAIL = 'sb-ihykf32215357@business.example.com'
+PAYPAL_RECEIVER_EMAIL = 'business@text.com'
 
-PAYPAL_CLIENT_ID = 'AfhEvCeAYdzynyWTuDLzqDqhvYDSSQRojgORCWOG6hqDoOYN4KOQq61zRf_pV9gKcP3G0zg2FXvIiSaD'
-PAYPAL_SECRET = 'EEtuMSsm_A1YaLGoLKPkidKux0dT15UM1otq-8aweSjFd1yEUe8pDx46yOl_THRs_-N7Grlmcpk-NFDp'
+PAYPAL_CLIENT_ID = 'AcwoI8Rxsi79YBYRRcQmWOfG5RjdyJvmu5FhR1da3mvXDwqZfz03MVSlWdiN8uEObgHAHJvaWRjnF5rQ'
+PAYPAL_SECRET = 'EMpXAn8SgJBgbu30Kha3y3v8Nn0h-o9jyLluPAcd-goI-ckGDTvZPzkntOQqKuFWZQnWSwXPkft6P8P3'
 PAYPAL_TEST = True  
