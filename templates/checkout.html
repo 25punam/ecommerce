@@ -137,24 +137,24 @@
                 <div class="info-section">
                     <h3 class="section-title">Order Information</h3>
                     
-                        <div class="order-summary">
-                            
-                                <p><strong>Product Name:</strong> </p>
-                                <p><strong>Quantity:</strong> </p>
-                                <p><strong>Price:</strong> </p>
-                            
-                            <p><strong>Total Price:</strong> </p>
-                        </div>
-                   
+                    {% for item in cart_items %}
+                    <p><strong>Product Name:</strong> {{ item.product.name }}</p>
+                    <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+                    <p><strong>Price:</strong> {{ item.total_price }}</p>
+                     {% endfor %}
+                    <p><strong>Total Price:</strong> {{ total_price }}</p>
+                
+                    
                     <h3 class="section-title">Payment Options</h3>
                     <div class="form-check payment-option">
-                        <input class="form-check-input" type="radio" name="payment-method" value="cash-on-delivery" id="cash-on-delivery" >
-                        <label class="form-check-label" for="cash-on-delivery">Cash on Delivery</label>
+                    <input class="form-check-input" type="radio" name="payment-method" value="cash-on-delivery" id="cash-on-delivery">
+                    <label class="form-check-label" for="cash-on-delivery">Cash on Delivery</label>
                     </div>
                     <div class="form-check payment-option">
-                        <input class="form-check-input" type="radio" name="payment-method" value="paypal" id="paypal">
-                        <label class="form-check-label" for="paypal">PayPal</label>
+                    <input class="form-check-input" type="radio" name="payment-method" value="razorpay" id="razorpay">
+                    <label class="form-check-label" for="razorpay">Razorpay</label>
                     </div>
+
                 </div>
             </div>
         
