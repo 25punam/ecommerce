@@ -13,6 +13,16 @@ Below are the test users available in the system:
 
 
 
+## Provider (Admin) User
+
+Below is the admin user available in the system:
+
+| Username  | Email              | Password     |
+|-----------|--------------------|--------------|
+| admin     | admin@mail.com      | admin |
+
+
+
 ## Test Payment Details
 
 To test payment functionality, you can use the following test card details:
