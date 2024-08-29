@@ -2,7 +2,6 @@ from django.shortcuts import render,redirect
 from .models import ProductModel, CartModel 
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
 def home(request):
     products = ProductModel.objects.all()
     username = request.session.get('username', 'None')
