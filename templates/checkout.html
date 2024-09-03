@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
         body {
@@ -14,12 +15,12 @@
         }
 
         .checkout-container {
-            max-width: 10000px;
+            max-width: 9000px;
             margin: 50px auto;
             padding: 30px;
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 150px rgba(0, 0, 0, 0.2);
         }
 
         .section-title {
@@ -66,12 +67,12 @@
         }
 
         .billing-section {
-            width: 40%; /* Percentage width for the billing section */
+            width: 50%; /* Percentage width for the billing section */
             padding-right: 20px; /* Space between sections */
         }
 
         .info-section {
-            width: 60%; /* Remaining width for order info and payment options */
+            width: 50%; /* Remaining width for order info and payment options */
         }
 
         /* Ensure responsiveness */
@@ -90,10 +91,41 @@
         .row {
             margin-bottom: 15px; 
         }
+
+        .checkout-header {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        }
+
+        .checkout-header h3 {
+            font-size: 28px; /* Adjust size as needed */
+            font-weight: bold; /* Makes the text bold */
+            color: #333; /* Adjust color as needed */
+            border-bottom: 2px solid #080808; /* Adds a border under the text */
+            padding-bottom: 10px; /* Adds space between the text and the border */
+        }
+
+
+        .total-price strong {
+        font-size: 18px; /* Adjust size as needed */
+        font-weight: bold; /* Ensures the text is bold */
+        color: #080101e6; /* Adjust color as needed */
+        background-color: #f0f0f0; /* Adds a background color */
+        padding: 5px 10px; /* Adds padding around the text */
+        border-radius: 50px; /* Rounds the corners of the background */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow */
+    }
     </style>
 </head>
 <body>
+
     <div class="checkout-container">
+       
+        <div class="checkout-header">
+            <h1>Checkout Page</h1>
+        </div>
+
         <form id="checkout-form" method="post">
             
             {% csrf_token %}
@@ -142,7 +174,9 @@
                     <p><strong>Quantity:</strong> {{ item.quantity }}</p>
                     <p><strong>Price:</strong> {{ item.total_price }}</p>
                      {% endfor %}
-                    <p><strong>Total Price:</strong> {{ total_price }}</p>
+                     <p class="total-price">
+                        <strong>Total Price:</strong> {{ total_price }}
+                    </p>
                 
                     
                     <h3 class="section-title">Payment Options</h3>
@@ -158,6 +192,11 @@
                 </div>
             </div>
         
+            
+            <a href="{% url 'order_list' %}" class="btn btn-primary" style="padding: 10px 20px; font-size: 16px; border-radius: 5px;">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+            
             <button type="submit" class="btn btn-primary">Complete Purchase</button>
             
         </form>

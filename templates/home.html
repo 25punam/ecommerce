@@ -13,13 +13,14 @@
                 <h3>{{ obj.name }}</h3>
                 <h3>₹ {{ obj.price }}</h3>
                 {% if user.is_authenticated %}
-                <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-outline-dark add-to-cart">
-                    Add to Cart
-                </a>
+                    <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-outline-dark add-to-cart">
+                        Add to Cart
+                    </a>
                 {% else %}
-                <a href="{% url 'user_login' %}" class="btn btn-outline-dark add-to-cart">
-                    Add to Cart
-                </a>
+                    <!-- Trigger the modal -->
+                    <a href="#" class="btn btn-outline-dark add-to-cart" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Add to Cart
+                    </a>
                 {% endif %}
                 <a href="{% url 'cart_detail' obj.id %}" class="btn btn-outline-dark">
                     View
@@ -29,11 +30,25 @@
         </div>
     </section>
 
-    <!-- Modal -->
-   
-
 </main>
 
-
+<!-- Modal Structure -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login Required</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="color: black;">
+                Please log in to add items to your cart.
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'user_login' %}?next={% url 'home' %}" class="btn btn-primary">Login</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

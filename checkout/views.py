@@ -51,12 +51,12 @@ def checkout(request):
             order_currency = 'INR'
 
             client = razorpay.Client(
-            auth=("rzp_test_uvJ9RLNvlUxw8Y", "yg7jO31c5YDExNLJ1bhkXUDa"))
+            auth=("rzp_test_drrQ8dUerWW3jC", "pbKoVGS3BT0ykzMu9wnKE3Hr"))
 
             payment = client.order.create({
                 'amount': amount,
                 'currency': 'INR',
-                'payment_capture': '1'
+                'payment_capture': '0'
             })
 
             return render(request, 'payment.html', {
@@ -66,6 +66,7 @@ def checkout(request):
                 'order_id': payment['id']
             })
         return redirect('order_success')
+        
 
     return render(request, 'checkout.html',{'cart_items':cart_items,'total_price':total_price})
 
@@ -73,3 +74,4 @@ def checkout(request):
 @csrf_exempt
 def order_success(request):
     return render(request, "order_success.html")
+
