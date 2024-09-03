@@ -6,6 +6,9 @@ from products.models import CartModel, Order
 import uuid
 from django.views.decorators.csrf import csrf_exempt
 import razorpay
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 @csrf_exempt
 @login_required(login_url='/')
@@ -73,5 +76,20 @@ def checkout(request):
 
 @csrf_exempt
 def order_success(request):
+    return render(request, "order_success.html")
+
+
+@csrf_exempt
+def order_success(request):
+    email = request.user.email
+
+    send_mail(
+        'Order Confirmation',
+        "Success! Your order has been processed. Thanks for shopping with us.",
+        settings.EMAIL_HOST_USER,  # Sender email
+        [email],  # Recipient email
+        fail_silently=False,
+    )
+
     return render(request, "order_success.html")
 

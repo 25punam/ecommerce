@@ -118,5 +118,10 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-RAZORPAY_KEY_ID = 'rzp_test_drrQ8dUerWW3jC'
-RAZORPAY_KEY_SECRET = 'pbKoVGS3BT0ykzMu9wnKE3Hr'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = '25punamgode@gmail.com'
+EMAIL_HOST_PASSWORD = 'szie putv nhmx uzsc'  
+
