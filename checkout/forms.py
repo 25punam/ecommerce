@@ -15,3 +15,4 @@ class CheckoutForm(forms.ModelForm):
             'zip_code',
             'payment_method'
         ]    
+

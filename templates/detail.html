@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %}
 
 {% block content %}
 <main>
@@ -27,8 +27,8 @@
         </section>
     </main>
     
-    <!-- Modal Structure -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <!-- modal -->
+     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -40,10 +40,10 @@
                 </div>
                 <div class="modal-footer">
                     <a href="{% url 'user_login' %}?next={% url 'cart_detail' detail.id %}" class="btn btn-outline-dark">Login</a>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
     
-{% endblock content %}
+{% endblock content %} 

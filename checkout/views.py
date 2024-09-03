@@ -93,3 +93,7 @@ def order_success(request):
 
     return render(request, "order_success.html")
 
+
+
+
+
