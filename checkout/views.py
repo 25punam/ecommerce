@@ -51,7 +51,7 @@ def checkout(request):
             order_currency = 'INR'
 
             client = razorpay.Client(
-            auth=("rzp_test_9yWLJe8qEz0pTa", "o2KCSVUjiNP4PBZrpapo0BNv"))
+            auth=("rzp_test_uvJ9RLNvlUxw8Y", "yg7jO31c5YDExNLJ1bhkXUDa"))
 
             payment = client.order.create({
                 'amount': amount,
