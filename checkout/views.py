@@ -75,11 +75,7 @@ def checkout(request):
 
 
 @csrf_exempt
-def order_success(request):
-    return render(request, "order_success.html")
-
-
-@csrf_exempt
+@login_required(login_url='/')
 def order_success(request):
     email = request.user.email
 
@@ -90,8 +86,10 @@ def order_success(request):
         [email],  # Recipient email
         fail_silently=False,
     )
-
     return render(request, "order_success.html")
+
+
+
 
 
 
