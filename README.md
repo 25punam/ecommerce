@@ -23,13 +23,9 @@ Below is the admin user available in the system:
 
 
 
-## Test Payment Details
 
-To test payment functionality, you can use the following test card details:
 
-### Razorpay Test Card Details
+##
+![Screenshot 2024-09-04 181135](https://github.com/user-attachments/assets/459e7135-f017-498a-ac50-867a0619c980)
 
-- **Card Number:** 4111 1111 1111 1111
-- **Expiry Date:** 12/26
-- **CVV:** 123
-- **Name on Card:** TEST
+![Screenshot 2024-09-04 181159](https://github.com/user-attachments/assets/c2c2edc7-e509-4e51-9a97-851feb7e750e)
