@@ -1,3 +1,5 @@
+
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
@@ -8,7 +10,6 @@ from django.views.decorators.csrf import csrf_exempt
 import razorpay
 from django.core.mail import send_mail
 from django.conf import settings
-
 
 @csrf_exempt
 @login_required(login_url='/')
@@ -49,12 +50,22 @@ def checkout(request):
 
         cart_items.delete()
 
+        # Send email notification
+        send_mail(
+            'Order Confirmation',
+            "Success! Your order has been processed. Thanks for shopping with us.",
+            settings.EMAIL_HOST_USER,  # Sender email
+            [email],  # Recipient email
+            fail_silently=False,
+        )
+
         if payment_method == 'razorpay':
             amount = int(total_price * 100)  
             order_currency = 'INR'
 
             client = razorpay.Client(
-            auth=("rzp_test_drrQ8dUerWW3jC", "pbKoVGS3BT0ykzMu9wnKE3Hr"))
+                auth=("rzp_test_drrQ8dUerWW3jC", "pbKoVGS3BT0ykzMu9wnKE3Hr")
+            )
 
             payment = client.order.create({
                 'amount': amount,
@@ -68,25 +79,19 @@ def checkout(request):
                 'currency': order_currency,
                 'order_id': payment['id']
             })
-        return redirect('order_success')
         
+        
+        return redirect('order_success')
 
-    return render(request, 'checkout.html',{'cart_items':cart_items,'total_price':total_price})
+    return render(request, 'checkout.html', {'cart_items': cart_items, 'total_price': total_price})
 
 
 @csrf_exempt
 @login_required(login_url='/')
 def order_success(request):
-    email = request.user.email
-
-    send_mail(
-        'Order Confirmation',
-        "Success! Your order has been processed. Thanks for shopping with us.",
-        settings.EMAIL_HOST_USER,  # Sender email
-        [email],  # Recipient email
-        fail_silently=False,
-    )
     return render(request, "order_success.html")
+
+
 
 
 
