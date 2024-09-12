@@ -35,20 +35,36 @@
 <!-- Modal Structure -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Login Required</h5>
+        <div class="modal-content rounded-3 shadow">
+            <div class="modal-header" style="background-color: #f8f9fa;">
+                <h5 class="modal-title" id="loginModalLabel" style="color: #212529;">Login Required</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" style="color: black;">
-                Please log in to add items to your cart.
+            <div class="modal-body" style="color: #212529;">
+                <p>Please log in to add items to your cart.</p>
             </div>
-            <div class="modal-footer">
-                <a href="{% url 'user_login' %}?next={% url 'home' %}" class="btn btn-outline-dark">Login</a>
-                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+            <div class="modal-footer" style="border-top: 1px solid #dee2e6;">
+                <a href="{% url 'user_login' %}?next={% url 'home' %}" class="btn btn-dark">Login</a>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    /* Custom modal styles */
+    .modal-content {
+        border: none; /* Remove border for a clean look */
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #dee2e6; /* Subtle border */
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: flex-end; /* Right-align footer buttons */
+    }
+</style>
 
 {% endblock %}

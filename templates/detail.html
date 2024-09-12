@@ -27,23 +27,62 @@
         </section>
     </main>
     
-    <!-- modal -->
-     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login Required</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" style="color: black;">
-                    Please log in to add items to your cart.
-                </div>
-                <div class="modal-footer">
-                    <a href="{% url 'user_login' %}?next={% url 'cart_detail' detail.id %}" class="btn btn-outline-dark">Login</a>
-                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
-                </div>
+<!-- Modal Structure -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-3 shadow">
+            <div class="modal-header" style="background-color: #f8f9fa;">
+                <h5 class="modal-title" id="loginModalLabel" style="color: #212529;">Login Required</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="color: #212529;">
+                <p>Please log in to add items to your cart.</p>
+            </div>
+            <div class="modal-footer" style="background-color: #f8f9fa; border-top: 1px solid #dee2e6;">
+                <a href="{% url 'user_login' %}?next={% url 'cart_detail' detail.id %}" class="btn btn-dark">Login</a>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
+
+<style>
+    /* Custom modal styles */
+    .modal-content {
+        border: none; /* Remove border for a cleaner look */
+    }
+
+    .modal-header {
+        padding: 15px 20px; /* Add custom padding */
+        border-bottom: 1px solid #dee2e6; /* Subtle border */
+    }
+
+    .modal-body {
+        padding: 20px; /* Add padding for a better layout */
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: flex-end; /* Right-align footer buttons */
+        padding: 10px 20px; /* Custom padding */
+    }
+
+    .btn-dark {
+        background-color: #343a40; /* Dark button color */
+        color: white; /* Text color for dark button */
+    }
+
+    .btn-outline-secondary {
+        color: #495057; /* Text color for secondary button */
+        border-color: #ced4da; /* Border color for secondary button */
+    }
+
+    .btn-outline-secondary:hover {
+        background-color: #e2e6ea; /* Hover color for secondary button */
+    }
+</style>
+
+<!-- Font Awesome for Close Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
 {% endblock content %} 
