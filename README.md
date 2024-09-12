@@ -27,7 +27,7 @@ Below is the admin user available in the system:
 
 ##
 
-![Sc![Screenshot 2024-09-12 202515](https://github.com/user-attachments/assets/47575bdf-ee37-4bf2-8d0e-1614826019a1)
+![Screenshot 2024-09-12 202515](https://github.com/user-attachments/assets/47575bdf-ee37-4bf2-8d0e-1614826019a1)
 
 ![Screenshot 2024-09-12 202606](https://github.com/user-attachments/assets/264506cd-c199-4968-bae5-362857cb0f59)
 
