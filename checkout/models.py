@@ -21,14 +21,14 @@ class CustomerPaymentDetails(models.Model):
         return f"Payment of {self.amount} for Order {self.order.id} - Status: {self.status}"
 
 
-class ProductReview(models.Model):
-    user = models.ForeignKey(CustomerModel, on_delete=models.CASCADE)
-    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE)
-    rating = models.PositiveIntegerField(default=1)
-    comment = models.TextField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+# class ProductReview(models.Model):
+#     user = models.ForeignKey(CustomerModel, on_delete=models.CASCADE)
+#     product = models.ForeignKey(ProductModel, on_delete=models.CASCADE)
+#     rating = models.PositiveIntegerField(default=1)
+#     comment = models.TextField(null=True, blank=True)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return f"Review for {self.product.name} by {self.user.name or self.user.username}"
+#     def __str__(self):
+#         return f"Review for {self.product.name} by {self.user.name or self.user.username}"
     
