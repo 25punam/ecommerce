@@ -1,0 +1,1965 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-07-29T04:37:46.900Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Wireless Earbuds",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-07-29T04:37:59.369Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Smartphone",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-07-29T04:38:10.864Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Wireless Earbuds",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-07-29T04:45:20.511Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Wireless Earbuds",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-07-29T04:53:12.599Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Wireless Earbuds",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-07-29T04:57:41.755Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Wireless Earbuds",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Desc\", \"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-07-29T12:26:38.028Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Gaming Laptop",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2024-07-29T12:39:17.329Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Bluetooth Speaker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2024-07-29T12:42:16.387Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Digital Watch",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-07-29T12:43:21.020Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "4K Action Camera",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-07-29T12:45:17.288Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "Gaming Keyboard",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-07-29T12:46:09.544Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Gaming Laptop",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Desc\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-07-29T17:43:21.065Z",
+    "user": 4,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "OrderItemModel object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2024-07-31T15:46:02.907Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "Gaming Keyboard",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2024-08-01T12:50:04.243Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Gaming Laptop",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2024-08-01T12:51:18.220Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Bluetooth Speaker",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2024-08-01T12:55:58.883Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Bluetooth Speaker",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2024-08-01T12:56:56.467Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Wireless Earbuds",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2024-08-01T12:59:32.682Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Digital Watch",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2024-08-01T13:04:13.948Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "4K Action Camera",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2024-08-01T13:10:34.748Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "Gaming Keyboard",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2024-08-01T13:17:40.297Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Gaming Laptop",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2024-08-01T13:21:16.672Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Gaming Laptop",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2024-08-01T13:22:53.837Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Gaming Laptop",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2024-08-02T02:54:26.338Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "Smartphone",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2024-08-02T02:56:58.048Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "Sample Product",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2024-08-02T10:53:39.568Z",
+    "user": 4,
+    "content_type": 12,
+    "object_id": "11",
+    "object_repr": "CartModel object (11)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2024-08-02T11:30:15.915Z",
+    "user": 4,
+    "content_type": 12,
+    "object_id": "12",
+    "object_repr": "CartModel object (12)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2024-08-04T12:46:34.957Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "Gaming Keyboard",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2024-08-06T12:43:50.285Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "15",
+    "object_repr": "Product5",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2024-08-06T12:43:50.293Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "14",
+    "object_repr": "Product7",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2024-08-06T12:43:50.301Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "11",
+    "object_repr": "New Product",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2024-08-07T03:45:44.994Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Wireless Earbuds",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2024-08-07T03:45:53.699Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Gaming Laptop",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2024-08-07T03:46:10.268Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Gaming Laptop",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2024-08-07T03:46:18.335Z",
+    "user": 4,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Gaming Laptop",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2024-08-18T06:21:16.224Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "1",
+    "object_repr": "game",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2024-08-18T06:35:25.864Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "1",
+    "object_repr": "game",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2024-08-18T06:38:38.798Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "2",
+    "object_repr": "ASUS ROG Zephyrus G14",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2024-08-18T06:41:55.919Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "3",
+    "object_repr": "Razer BlackWidow V3",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2024-08-18T06:42:55.131Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "4",
+    "object_repr": "Canon EOS R6",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2024-08-18T06:45:13.114Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "5",
+    "object_repr": "Fitbit Inspire 3",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2024-08-18T06:47:42.906Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "6",
+    "object_repr": "Bose SoundLink Micro",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2024-08-18T06:50:54.647Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "7",
+    "object_repr": "Anker Soundcore Life P2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2024-08-18T18:24:39.256Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "7",
+    "object_repr": "Anker Soundcore Life P2",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2024-08-25T13:20:24.383Z",
+    "user": 4,
+    "content_type": 16,
+    "object_id": "104",
+    "object_repr": "CartModel object (104)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2024-08-25T13:20:33.239Z",
+    "user": 4,
+    "content_type": 17,
+    "object_id": "98",
+    "object_repr": "Order 98 - Pending",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2024-08-26T05:37:37.608Z",
+    "user": 4,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "komal@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2024-08-27T11:33:46.890Z",
+    "user": 4,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2024-10-01T13:46:07.826Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "4",
+    "object_repr": "Canon EOS R6",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2024-10-01T13:46:24.847Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "7",
+    "object_repr": "Anker Soundcore Life P2",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2024-10-01T13:47:18.143Z",
+    "user": 4,
+    "content_type": 15,
+    "object_id": "6",
+    "object_repr": "Bose SoundLink Micro",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add customer model",
+    "content_type": 7,
+    "codename": "add_customermodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change customer model",
+    "content_type": 7,
+    "codename": "change_customermodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete customer model",
+    "content_type": 7,
+    "codename": "delete_customermodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view customer model",
+    "content_type": 7,
+    "codename": "view_customermodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add product model",
+    "content_type": 8,
+    "codename": "add_productmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change product model",
+    "content_type": 8,
+    "codename": "change_productmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete product model",
+    "content_type": 8,
+    "codename": "delete_productmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view product model",
+    "content_type": 8,
+    "codename": "view_productmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add order item model",
+    "content_type": 9,
+    "codename": "add_orderitemmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change order item model",
+    "content_type": 9,
+    "codename": "change_orderitemmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete order item model",
+    "content_type": 9,
+    "codename": "delete_orderitemmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view order item model",
+    "content_type": 9,
+    "codename": "view_orderitemmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add order model",
+    "content_type": 10,
+    "codename": "add_ordermodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change order model",
+    "content_type": 10,
+    "codename": "change_ordermodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete order model",
+    "content_type": 10,
+    "codename": "delete_ordermodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view order model",
+    "content_type": 10,
+    "codename": "view_ordermodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add order item",
+    "content_type": 11,
+    "codename": "add_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change order item",
+    "content_type": 11,
+    "codename": "change_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete order item",
+    "content_type": 11,
+    "codename": "delete_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view order item",
+    "content_type": 11,
+    "codename": "view_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add cart model",
+    "content_type": 12,
+    "codename": "add_cartmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change cart model",
+    "content_type": 12,
+    "codename": "change_cartmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete cart model",
+    "content_type": 12,
+    "codename": "delete_cartmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view cart model",
+    "content_type": 12,
+    "codename": "view_cartmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add customer payment details",
+    "content_type": 13,
+    "codename": "add_customerpaymentdetails"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change customer payment details",
+    "content_type": 13,
+    "codename": "change_customerpaymentdetails"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete customer payment details",
+    "content_type": 13,
+    "codename": "delete_customerpaymentdetails"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view customer payment details",
+    "content_type": 13,
+    "codename": "view_customerpaymentdetails"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add product review",
+    "content_type": 14,
+    "codename": "add_productreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change product review",
+    "content_type": 14,
+    "codename": "change_productreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete product review",
+    "content_type": 14,
+    "codename": "delete_productreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view product review",
+    "content_type": 14,
+    "codename": "view_productreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add product model",
+    "content_type": 15,
+    "codename": "add_productmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change product model",
+    "content_type": 15,
+    "codename": "change_productmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete product model",
+    "content_type": 15,
+    "codename": "delete_productmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view product model",
+    "content_type": 15,
+    "codename": "view_productmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add cart model",
+    "content_type": 16,
+    "codename": "add_cartmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change cart model",
+    "content_type": 16,
+    "codename": "change_cartmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete cart model",
+    "content_type": 16,
+    "codename": "delete_cartmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view cart model",
+    "content_type": 16,
+    "codename": "view_cartmodel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add order",
+    "content_type": 17,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change order",
+    "content_type": 17,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete order",
+    "content_type": 17,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view order",
+    "content_type": 17,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add customer payment details",
+    "content_type": 18,
+    "codename": "add_customerpaymentdetails"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change customer payment details",
+    "content_type": 18,
+    "codename": "change_customerpaymentdetails"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete customer payment details",
+    "content_type": 18,
+    "codename": "delete_customerpaymentdetails"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view customer payment details",
+    "content_type": 18,
+    "codename": "view_customerpaymentdetails"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can add product review",
+    "content_type": 19,
+    "codename": "add_productreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can change product review",
+    "content_type": 19,
+    "codename": "change_productreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can delete product review",
+    "content_type": 19,
+    "codename": "delete_productreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can view product review",
+    "content_type": 19,
+    "codename": "view_productreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 77,
+  "fields": {
+    "name": "Can add PayPal IPN",
+    "content_type": 20,
+    "codename": "add_paypalipn"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 78,
+  "fields": {
+    "name": "Can change PayPal IPN",
+    "content_type": 20,
+    "codename": "change_paypalipn"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 79,
+  "fields": {
+    "name": "Can delete PayPal IPN",
+    "content_type": 20,
+    "codename": "delete_paypalipn"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 80,
+  "fields": {
+    "name": "Can view PayPal IPN",
+    "content_type": 20,
+    "codename": "view_paypalipn"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$JpHbFTRsvpPYHWF9xqI4qx$TmdTZAYK/dEjrscXsceVvjjrJ8y4TKD8uZ+wcwo7HOs=",
+    "last_login": "2024-09-19T12:24:02.070Z",
+    "is_superuser": false,
+    "username": "komal",
+    "first_name": "",
+    "last_name": "",
+    "email": "komal@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-27T13:22:49.803Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$jTgyri4lecANz0nuWwweNY$ene5hTbQM5FqJRHsWfzYUqFh7h27WNRhNrS26fN/N3s=",
+    "last_login": "2024-07-27T14:21:18.682Z",
+    "is_superuser": false,
+    "username": "komal2",
+    "first_name": "",
+    "last_name": "",
+    "email": "komal2@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-27T14:21:01.614Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$dYQBqbdbTDkzocSoQ74ME7$AhYygMQoQbiG3Wo+Q5w/xD1u5N/KzV2F9ZKie+rTOJ4=",
+    "last_login": "2024-10-01T13:40:55.402Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@mail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-07-28T13:22:05Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$b2abZrI5ATCYeRoKBqUka2$p51HGEDq8zZnfl2eNhtwK2zLaRFbalNPYobdIcPHAyo=",
+    "last_login": "2024-08-01T13:37:14.949Z",
+    "is_superuser": false,
+    "username": "komal5",
+    "first_name": "",
+    "last_name": "",
+    "email": "komal@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-29T14:07:52.318Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$I7FBAW1jjkfVCdv3GbxDIY$bMqPWJ5FQi12qAxM7oiMz6apFm/OVgHJDNmguVDIUiE=",
+    "last_login": "2024-07-29T17:42:06.904Z",
+    "is_superuser": false,
+    "username": "komal20",
+    "first_name": "",
+    "last_name": "",
+    "email": "komal20@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-29T14:10:17.456Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$ZlJN48wO1qE9mQ8FsmPtW9$G7YRA9vQgwt4zah6nhH77JmD78ZNc7nb/u0zYsYFg/g=",
+    "last_login": "2024-08-06T16:41:51.334Z",
+    "is_superuser": false,
+    "username": "sonam",
+    "first_name": "",
+    "last_name": "",
+    "email": "sonam@gamil.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-08-04T16:06:01.614Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$FAHMjhuYbz5H8JJHsnhWlw$DY9fCa+MjxJrE0gbnMAr25+ZrO6ghk3oJUYrdpwuAIA=",
+    "last_login": "2024-08-08T12:45:52.511Z",
+    "is_superuser": false,
+    "username": "rina",
+    "first_name": "",
+    "last_name": "",
+    "email": "rina@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-08-08T12:29:28.601Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$jpyFJA6y8VdoHpWfCP3Dor$FHqE9ZYh6cTgqNg8Vqcl4FZqb+T6/6X1LiJ0zYZovFc=",
+    "last_login": "2024-08-08T12:51:03.500Z",
+    "is_superuser": false,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "root@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-08-08T12:51:03.126Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$WYD5xI7C0g12aRKK6QXmNG$zEs87Ff9CedHEtrgyoRM0dyHCU0EKJ4nSAe2wh/z8ZA=",
+    "last_login": "2024-08-14T11:05:33.617Z",
+    "is_superuser": false,
+    "username": "test1",
+    "first_name": "",
+    "last_name": "",
+    "email": "test1@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-08-14T11:05:33.250Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$xBzc5t7u1DLcdPSLtpuwiu$uKz8Cv/IelSlt/q2Ev4z7Sk9WxZW/U9+flHiJveNYNk=",
+    "last_login": "2024-08-26T05:02:32.827Z",
+    "is_superuser": false,
+    "username": "komal12",
+    "first_name": "",
+    "last_name": "",
+    "email": "komal@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-08-18T08:54:34.470Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$DyiIgizE8FBdfT5Dbj5vkK$Vl8I4KI0a3Yzwkx52iOCKCX5beoTCUimTeP/evxcLWI=",
+    "last_login": "2024-08-27T05:29:37.723Z",
+    "is_superuser": false,
+    "username": "testuser1",
+    "first_name": "",
+    "last_name": "",
+    "email": "testuser1@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-08-26T05:21:18.164Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$MB6K3dXITvevuZQnU2XkPQ$tRHdbSSoweZjfXFwOvb/iMwIysrWjhSbAyK/CGbPKFw=",
+    "last_login": "2024-09-02T05:38:46.455Z",
+    "is_superuser": false,
+    "username": "testuser2",
+    "first_name": "",
+    "last_name": "",
+    "email": "testuser2@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-08-26T05:24:04.311Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$GPu5jhaqkjpwkU8pf2OsYT$DWP4ConmJpSqdv5RXTN0X7XbkOAfDS4dvru7EPmrZNg=",
+    "last_login": "2024-09-04T13:05:34.823Z",
+    "is_superuser": false,
+    "username": "punam",
+    "first_name": "",
+    "last_name": "",
+    "email": "25punamgode@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-09-04T13:05:34.463Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "customer",
+    "model": "customermodel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "customer",
+    "model": "productmodel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "customer",
+    "model": "orderitemmodel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "customer",
+    "model": "ordermodel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "customer",
+    "model": "orderitem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "customer",
+    "model": "cartmodel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "customer",
+    "model": "customerpaymentdetails"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "customer",
+    "model": "productreview"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "products",
+    "model": "productmodel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "products",
+    "model": "cartmodel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "products",
+    "model": "order"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "checkout",
+    "model": "customerpaymentdetails"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 19,
+  "fields": {
+    "app_label": "checkout",
+    "model": "productreview"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 20,
+  "fields": {
+    "app_label": "ipn",
+    "model": "paypalipn"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2hh97okr61sy3fdgeyw9ixjhywvmpsoh",
+  "fields": {
+    "session_data": ".eJxVjDkOwyAURO9CHSGzQ8r0PgP6wCd2bIPkpYpy92DJRdKNZt68N_Fw7IM_Nlz9mMidMHL77QLECcs5pBeUZ6Wxln0dAz0Req0b7WvC-XGxf4IBtqG9lZQsQ8rMYLTGcGDCWa6VU5FpbaUIXXYxW2GVkAxzwKy7FtABFybwJj11BRZstqkuMJPPFyL1Pbc:1slqXv:kmSmjLRElv2NOZOMCSw_LGui3uADxQmq_ix8YhUItsQ",
+    "expire_date": "2024-09-18T13:59:43.855Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "98lqzqckn9zfv8yvg2nqne3ciedjdn1m",
+  "fields": {
+    "session_data": ".eJxVjDEOwjAMRe-SGUVOVeyWkZ0zRHackAJKpKadEHenlTrA-t97_208r0v2a4uzn9RcjANz-h2FwzOWneiDy73aUMsyT2J3xR602VvV-Loe7t9B5pa3WohVACNiz5CIqANkcDHpAB060uDSSGehOIzEgClA6qEHla1KIObzBQeLOCI:1seBor:x_FWEcb7EcxEDdA_QlAOrAy2fmiVwwNPNkVDE5Iy-14",
+    "expire_date": "2024-08-28T11:05:33.622Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "a5l0vu62nqa2nge3npb0r1juluojosoc",
+  "fields": {
+    "session_data": ".eJxVjEEOgyAQRe_CuiFAsWKX3XsGMsMM1aqQiK6a3r2SuGi3_73_3sLDvg1-L7z6kcRdaC0uvyNCmDhVQi9IzyxDTts6oqyKPGmRfSaeH6f7FxigDMe7czoENugUtio0AJEjKXBN1C0it9YhQOMc34yJhmzoiKwluhKSZmWPaM0lWPioTXmBWRvx-QI5akA_:1sfx2N:E-3p53Uv0A3sXXgNgIsoWNN0ugpOIV25FfS_xEAwjIo",
+    "expire_date": "2024-09-02T07:42:47.016Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "b31thpl83rww14rdeaup7rnlroi9lhe3",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pAyLcK4dN8zkIEZpGpoUtqV8e7apAvd_vfef6lA21rC1mQJE6uLGtTpd4uUHlJ3wHeqt1mnua7LFPWu6IM2Pc4sz-vh_h0UauVbE6CR7Akce8w2WcgeI3DXnSPFZDJmdF6YTA_OA4KXRGZI1vVgUFC9P_QGN-0:1sbJ6N:IfH36cm9f-VAOcvhonWQTe5Nb8P1WRctel8CFNCFwwA",
+    "expire_date": "2024-08-20T12:15:43.937Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "bsbtoi3rdlar42ioqko9x82pxzh4l185",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAURP-FtSEtj-J16d5vIHCZStXQpLQr479Lky50lmfOzFv4sK3ZbxWLn5K4CCdOvywGfqLsRXqEcp8lz2Vdpih3RR5tlbc54XU93L-DHGpua3RKgbUmp4zVYAM7trgBlIgJdlDW9J0-K-KxsQDYGJOJMOgjkfh8AfLMOLg:1sadtk:MKkRcSNG9xvHCsH4qi7bwiZ8fm2USPqHcv-0Zh1Njmk",
+    "expire_date": "2024-08-18T16:15:56.663Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dp9c3w2q5tmquuqj0q81zajnf1r321jl",
+  "fields": {
+    "session_data": ".eJxVjDkOwyAURO9CHSGzQ8r0PgP6wCd2bIPkpYpy92DJRdKNZt68N_Fw7IM_Nlz9mMidMHL77QLECcs5pBeUZ6Wxln0dAz0Req0b7WvC-XGxf4IBtqG9lZQsQ8rMYLTGcGDCWa6VU5FpbaUIXXYxW2GVkAxzwKy7FtABFybwJj11BRZstqkuMJPPFyL1Pbc:1sg3Pu:n-sKpjYA1VXRQrkIqicM7JyTtHVgM9XyAE2w4Dl_DeY",
+    "expire_date": "2024-09-02T14:31:30.782Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "e2oghrnjlha3q8rz90w1ymiobs8ap9im",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSE8BVy67zeQGQakaiAp7cr479qkC93ec859sQjbWuM28hJnYhdm2el3Q0iP3HZAd2i3zlNv6zIj3xV-0MGnTvl5Pdy_gwqjfmsF2mTU2phQSFpHrtjgyGtKZwIZVFZFeyGk9GSUU9ajRSRtgwmehGTvD9TkNx8:1sYR2W:ayBKLSJAnO05-yF_M4zXE_EUK9gITuDeNESMioSLWFQ",
+    "expire_date": "2024-08-12T14:07:52.806Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "obckfjelmjt4ssyj0fof4m2et5njmyai",
+  "fields": {
+    "session_data": ".eJxVjEEOgyAQRe_CuiFAsWKX3XsGMsMM1aqQiK6a3r2SuGi3_73_3sLDvg1-L7z6kcRdaC0uvyNCmDhVQi9IzyxDTts6oqyKPGmRfSaeH6f7FxigDMe7czoENugUtio0AJEjKXBN1C0it9YhQOMc34yJhmzoiKwluhKSZmWPaM0lWPioTXmBWRvx-QI5akA_:1siCk2:1u0EXOWryNZgBV3cLys1yaF135PavFJN1P_FBlgv748",
+    "expire_date": "2024-09-08T12:53:10.159Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "rwcltb6obdovyrjvs1m2xwqf2dgc66e6",
+  "fields": {
+    "session_data": ".eJxVjcsOwiAQRX_FsFbCq9B26d5vIAMDFq2QlHZl_Hdp0oUmdzX3zLlvYmFbJ7vVsNiEZCQ9Of_eHPhnyHuBD8j3Qn3J65Ic3RF6tJXeCob5erB_ggnq1L69A6kRhe4NKse9RiOD5FFCkE4C8yywAQ1EjGiY53rgELSLaoAGS9ekM9TVzuWecvMJJtSF9S0nLkbVjZ1oyL6Y4RUasKQM5PMFZF9H3Q:1sc2We:ipWOyS-EMskgo51rQqLYdIQ8k5nOcOo-FM0Uare8Q2c",
+    "expire_date": "2024-08-22T12:45:52.523Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "tm95p47xg4mpb306qc3pny9pxt226s76",
+  "fields": {
+    "session_data": ".eJxVjDkOwyAURO9CHSGzQ8r0PgP6wCd2bIPkpYpy92DJRdKNZt68N_Fw7IM_Nlz9mMidMHL77QLECcs5pBeUZ6Wxln0dAz0Req0b7WvC-XGxf4IBtqG9lZQsQ8rMYLTGcGDCWa6VU5FpbaUIXXYxW2GVkAxzwKy7FtABFybwJj11BRZstqkuMJPPFyL1Pbc:1srGCY:gF28KOmEGyQoGwV68XtzaIXNQScuw7bJTNTEfeLr83o",
+    "expire_date": "2024-10-03T12:24:02.075Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vb9c69h5quexqdhqdljksu8y9w1kg0a0",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlnxJsFeSnrOEK29a2wgjpRPhbg7sZQC2jfz5q0G2tY0bIvMQ2Z1UZ06_W6ewlNKBfygcp90mMo6Z6-rog-66NvE8roe7l8g0ZL2NwEaiY7AssPYhx6iQw_cNGdPPpiIEa0TJtOCdYDgJJDpQm9bMCi4R2uu0Ci1xmMu6vMFV5Y-RA:1svd7X:SewIUnE9sLFvNgIkuqXK3BNg_-pXo7cysk_ufcKVCik",
+    "expire_date": "2024-10-15T13:40:55.410Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vq7e2pxh2g8zzr2jsf5nk0sqpszjyovg",
+  "fields": {
+    "session_data": ".eJxVjssOwiAQRX_FsFbCo4G2K-PebyADAy1KISntyvjv0sSFJrOae-bMfRED-zabvfrVRCQj6cn5d2fBPX0-AnxAngp1JW9rtPRA6Det9F7Qp9uX_RPMUOd27SxIhShUr7Gz3CnU0kseJHhpJTDHPBtQQ8CAmjmuBg5e2dAN0GBpmzRB3UwqU8zNJ5joLqxvc-JilGwUvCHHxwyLb8AaM1ynBWJqlRfy_gBHBkuK:1sc2Hd:bLrVeELEkizi2xqdHe6vnGp94wB0-ifPyxe2AHTL9f8",
+    "expire_date": "2024-08-22T12:30:21.839Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "x05iufre0tw0zp1dyte3bp7usmtmd8i7",
+  "fields": {
+    "session_data": ".eJxVjDkOwyAURO9CHSGzQ8r0PgP6wCd2bIPkpYpy92DJRdKNZt68N_Fw7IM_Nlz9mMidMHL77QLECcs5pBeUZ6Wxln0dAz0Req0b7WvC-XGxf4IBtqG9lZQsQ8rMYLTGcGDCWa6VU5FpbaUIXXYxW2GVkAxzwKy7FtABFybwJj11BRZstqkuMJPPFyL1Pbc:1shrTI:_DH6TWzKylFYYo2YRF9p5agmgvNneE3YR82jviQPqGc",
+    "expire_date": "2024-09-07T14:10:28.704Z"
+  }
+},
+{
+  "model": "products.productmodel",
+  "pk": 2,
+  "fields": {
+    "name": "ASUS ROG Zephyrus G14",
+    "price": "50000.00",
+    "desc": "The ASUS ROG Zephyrus G14 is a high-performance gaming laptop known for its compact design and powerful specifications. It features AMD Ryzen 9 5900HS processor, NVIDIA GeForce RTX 3060 graphics, and a 14-inch FHD display with a 120Hz refresh rate.",
+    "image": "images/laptops3.jpeg"
+  }
+},
+{
+  "model": "products.productmodel",
+  "pk": 3,
+  "fields": {
+    "name": "Razer BlackWidow V3",
+    "price": "5000.00",
+    "desc": "The Razer BlackWidow V3 is a highly-regarded mechanical gaming keyboard known for its durability and performance. It features Razer's own Green or Yellow mechanical switches, which offer tactile feedback and a satisfying typing experience.",
+    "image": "images/keyboards.webp"
+  }
+},
+{
+  "model": "products.productmodel",
+  "pk": 4,
+  "fields": {
+    "name": "Canon EOS R6",
+    "price": "40000.00",
+    "desc": "The Canon EOS R6 is a versatile mirrorless camera that excels in both photography and video recording. It features a full-frame 20.1 MP CMOS sensor and the DIGIC X image processor, which delivers high-quality images with excellent detail and color accuracy.",
+    "image": "images/camera.jpg"
+  }
+},
+{
+  "model": "products.productmodel",
+  "pk": 5,
+  "fields": {
+    "name": "Fitbit Inspire 3",
+    "price": "20000.00",
+    "desc": "The Fitbit Inspire 3 is an affordable fitness tracker with essential health and fitness features. It tracks steps, heart rate, sleep, and has built-in GPS for tracking outdoor activities.",
+    "image": "images/watch.jpg"
+  }
+},
+{
+  "model": "products.productmodel",
+  "pk": 6,
+  "fields": {
+    "name": "Bose SoundLink Micro",
+    "price": "500.00",
+    "desc": "The Bose SoundLink Micro is a compact and durable Bluetooth speaker known for its impressive sound quality and robust build. It features a silicone exterior that is both waterproof and shockproof, making it ideal for outdoor adventures.",
+    "image": "images/mini-bluetooth-speaker.jpg"
+  }
+},
+{
+  "model": "products.productmodel",
+  "pk": 7,
+  "fields": {
+    "name": "Anker Soundcore Life P2",
+    "price": "2000.00",
+    "desc": "The Anker Soundcore Life P2 are affordable true wireless earbuds that offer good sound quality and comfortable fit. They feature 6mm graphene drivers for clear audio and deep bass.",
+    "image": "images/noise-shots-x-buds.webp"
+  }
+},
+{
+  "model": "products.cartmodel",
+  "pk": 238,
+  "fields": {
+    "user": 1,
+    "product": 2,
+    "quantity": 1
+  }
+}
+]
