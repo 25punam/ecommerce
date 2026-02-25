@@ -1,5 +1,3 @@
-
-
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
@@ -18,6 +16,13 @@ def checkout(request):
     total_price = sum(item.total_price() for item in cart_items)
 
     if request.method == "POST":
+        if not cart_items.exists():
+            return render(request, 'checkout.html', {
+                'cart_items': cart_items,
+                'total_price': total_price,
+                'error': 'Your cart is empty. Please add items before checking out.'
+            })
+
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
