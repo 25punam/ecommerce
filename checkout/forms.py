@@ -2,7 +2,6 @@ from django import forms
 from .models import CustomerPaymentDetails
 
 class CheckoutForm(forms.ModelForm):
-
     class Meta:
         model = CustomerPaymentDetails
         fields = [
