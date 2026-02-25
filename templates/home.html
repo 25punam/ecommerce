@@ -2,48 +2,38 @@
 
 {% block content %}
 <main>
-
     <section id="products">
         <div class="product-list">
             {% for obj in products %}
             <div class="product-item">
-    
                 <img src="{{ obj.image.url }}" alt="{{ obj.name }}" style="max-width: 100%; height: auto;">
                 <br><br>
                 <h3>{{ obj.name }}</h3>
                 <h3>₹ {{ obj.price }}</h3>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-outline-dark add-to-cart">
-                        Add to Cart
-                    </a>
+                    <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-outline-dark add-to-cart">Add to Cart</a>
                 {% else %}
-                    <!-- Trigger the modal -->
-                    <a href="#" class="btn btn-outline-dark add-to-cart" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Add to Cart
-                    </a>
+                    <a href="#" class="btn btn-outline-dark add-to-cart" data-bs-toggle="modal" data-bs-target="#loginModal">Add to Cart</a>
                 {% endif %}
-                <a href="{% url 'cart_detail' obj.id %}" class="btn btn-outline-dark">
-                    View
-                </a>
+                <a href="{% url 'cart_detail' obj.id %}" class="btn btn-dark">View</a>
             </div>
             {% endfor %}
         </div>
     </section>
-
 </main>
 
 <!-- Modal Structure -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content rounded-3 shadow">
-            <div class="modal-header" style="background-color: #f8f9fa;">
-                <h5 class="modal-title" id="loginModalLabel" style="color: #212529;">Login Required</h5>
+        <div class="modal-content rounded-4 shadow-lg">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title fw-bold text-primary" id="loginModalLabel">Login Required</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" style="color: #212529;">
+            <div class="modal-body text-dark">
                 <p>Please log in to add items to your cart.</p>
             </div>
-            <div class="modal-footer" style="border-top: 1px solid #dee2e6;">
+            <div class="modal-footer bg-light border-top">
                 <a href="{% url 'user_login' %}?next={% url 'home' %}" class="btn btn-dark">Login</a>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
             </div>
@@ -52,19 +42,37 @@
 </div>
 
 <style>
-    /* Custom modal styles */
     .modal-content {
-        border: none; /* Remove border for a clean look */
+        border: none;
+        box-shadow: var(--shadow);
     }
-
     .modal-header {
-        border-bottom: 1px solid #dee2e6; /* Subtle border */
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid #e0e0e0;
     }
-
+    .modal-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+    .modal-body {
+        padding: 1.25rem 2rem;
+    }
     .modal-footer {
+        padding: 1rem 2rem;
+        border-top: 1px solid #e0e0e0;
         display: flex;
-        justify-content: flex-end; /* Right-align footer buttons */
+        justify-content: flex-end;
     }
 </style>
 
 {% endblock %}
+                        font-weight: 600;
+                    }
+                    .modal-body {
+                        padding: 1.25rem 2rem;
+                    }
+                    .modal-footer {
+                        padding: 1rem 2rem;
+                        border-top: 1px solid #e0e0e0;
+                        display: flex;
+                        justify-content: flex-end;

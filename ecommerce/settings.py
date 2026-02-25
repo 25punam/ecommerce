@@ -137,3 +137,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = '25punamgode@gmail.com'
 EMAIL_HOST_PASSWORD = 'szie putv nhmx uzsc'  
 
+
+
+

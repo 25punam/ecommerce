@@ -3,24 +3,19 @@
 {% block content %}
 <main>
     <main>
-        <section id="product-detail" style="padding: 20px; background-color: #f9f9f9;">
-            <div class="product-container" style="max-width: 600px; margin: auto; padding: 20px; background-color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px;">
-                <div class="product-image">
-                    <img src="{{ detail.image.url }}" alt="{{ detail.name }}" style="width: 50%; height: auto; border-radius: 8px;">
+        <section id="product-detail" style="padding: 32px; background: #f5f7fa;">
+            <div class="product-container" style="max-width: 480px; margin: auto; padding: 32px; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-radius: 16px;">
+                <div class="product-image mb-3">
+                    <img src="{{ detail.image.url }}" alt="{{ detail.name }}" style="width: 100%; max-width: 220px; height: auto; border-radius: 12px; margin: auto; display: block;">
                 </div>
-                <div class="product-info" style="margin-top: 15px;">
-                    <h3 style="font-size: 24px; margin-bottom: 10px;">{{ detail.name }}</h3>
-                    <p style="font-size: 16px; color: #666;">{{ detail.desc }}</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #333;">₹ {{ detail.price }}</p>
-                    
+                <div class="product-info mt-3">
+                    <h3 class="mb-2">{{ detail.name }}</h3>
+                    <p class="mb-3 text-secondary">{{ detail.desc }}</p>
+                    <p class="mb-3 fw-bold">₹ {{ detail.price }}</p>
                     {% if user.is_authenticated %}
-                        <a href="{% url 'add_to_cart' detail.id %}" class="btn btn-outline-dark">
-                            Add to Cart
-                        </a>
+                        <a href="{% url 'add_to_cart' detail.id %}" class="btn btn-outline-dark">Add to Cart</a>
                     {% else %}
-                        <a href="#" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#loginModal">
-                            Add to Cart
-                        </a>
+                        <a href="#" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#loginModal">Add to Cart</a>
                     {% endif %}
                 </div>
             </div>
@@ -30,15 +25,15 @@
 <!-- Modal Structure -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content rounded-3 shadow">
-            <div class="modal-header" style="background-color: #f8f9fa;">
-                <h5 class="modal-title" id="loginModalLabel" style="color: #212529;">Login Required</h5>
+        <div class="modal-content rounded-4 shadow-lg">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title fw-bold text-primary" id="loginModalLabel">Login Required</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" style="color: #212529;">
+            <div class="modal-body text-dark">
                 <p>Please log in to add items to your cart.</p>
             </div>
-            <div class="modal-footer" style="background-color: #f8f9fa; border-top: 1px solid #dee2e6;">
+            <div class="modal-footer bg-light border-top">
                 <a href="{% url 'user_login' %}?next={% url 'cart_detail' detail.id %}" class="btn btn-dark">Login</a>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
             </div>
@@ -47,38 +42,26 @@
 </div>
 
 <style>
-    /* Custom modal styles */
     .modal-content {
-        border: none; /* Remove border for a cleaner look */
+        border: none;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
-
     .modal-header {
-        padding: 15px 20px; /* Add custom padding */
-        border-bottom: 1px solid #dee2e6; /* Subtle border */
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid #e0e0e0;
     }
-
+    .modal-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
     .modal-body {
-        padding: 20px; /* Add padding for a better layout */
+        padding: 1.25rem 2rem;
     }
-
     .modal-footer {
+        padding: 1rem 2rem;
+        border-top: 1px solid #e0e0e0;
         display: flex;
-        justify-content: flex-end; /* Right-align footer buttons */
-        padding: 10px 20px; /* Custom padding */
-    }
-
-    .btn-dark {
-        background-color: #343a40; /* Dark button color */
-        color: white; /* Text color for dark button */
-    }
-
-    .btn-outline-secondary {
-        color: #495057; /* Text color for secondary button */
-        border-color: #ced4da; /* Border color for secondary button */
-    }
-
-    .btn-outline-secondary:hover {
-        background-color: #e2e6ea; /* Hover color for secondary button */
+        justify-content: flex-end;
     }
 </style>
 
