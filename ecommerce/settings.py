@@ -129,12 +129,28 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '25punamgode@gmail.com'
-EMAIL_HOST_PASSWORD = 'szie putv nhmx uzsc'  
+# Email Configuration
+# For DEVELOPMENT: Use console backend (prints emails to terminal)
+# For PRODUCTION: Use SMTP backend with Gmail or other service
+# if DEBUG:
+#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# else:
+#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#     EMAIL_HOST = 'smtp.gmail.com'
+#     EMAIL_PORT = 587
+#     EMAIL_USE_TLS = True
+#     # Use environment variables for production security:
+#     # from os import getenv
+#     # EMAIL_HOST_USER = getenv('EMAIL_HOST_USER')
+#     # EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD')
+#     EMAIL_HOST_USER = '25punamgode@gmail.com'
+#     EMAIL_HOST_PASSWORD = 'your_app_password_here'  # Use Gmail App Password, not your main password!
+
+# For local testing with SMTP (if needed):
+# 1. Go to https://myaccount.google.com/apppasswords
+# 2. Generate an App Password for "Mail"
+# 3. Replace 'your_app_password_here' with the generated password
+# 4. Set DEBUG = False to use SMTP  
 
 
 

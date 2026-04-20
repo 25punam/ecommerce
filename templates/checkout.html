@@ -125,7 +125,20 @@
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-control" required placeholder="Enter your email">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-control" 
+                            required 
+                            placeholder="Enter your email (e.g., user@example.com)"
+                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                            title="Please enter a valid email address (e.g., user@example.com)"
+                        >
+                        
+                        <div id="email-error" class="invalid-feedback d-block" style="display: none; color: #dc3545;">
+                            
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="address" class="form-label">Shipping Address</label>
@@ -142,36 +155,68 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="zip" class="form-label">ZIP Code</label>
-                        <input type="text" id="zip" name="zip" class="form-control" required pattern="\d{5}{6}">
+                        <label for="zip_code" class="form-label">ZIP Code</label>
+                        <input type="text" id="zip_code" name="zip_code" class="form-control" required pattern="\d{5,6}" placeholder="Enter your ZIP code (5-6 digits)">
                     </div>
                 </div>
         
                 <div class="info-section">
                     <h3 class="section-title">Order Information</h3>
                     
-                    {% for item in cart_items %}
-                    <p><strong>Product Name:</strong> {{ item.product.name }}</p>
-                    <p><strong>Quantity:</strong> {{ item.quantity }}</p>
-                    <p><strong>Price:</strong> {{ item.total_price }}</p>
-                     {% endfor %}
-                     <p class="total-price">
-                        <strong>Total Price:</strong> {{ total_price }}
-                    </p>
+                    <!-- Order Items Table -->
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
+                            <thead>
+                                <tr style="background: linear-gradient(90deg, #4f8cff 0%, #ff6f61 100%); color: #fff;">
+                                    <th style="padding: 14px; text-align: left; font-weight: 600; border: none;">Product Name</th>
+                                    <th style="padding: 14px; text-align: center; font-weight: 600; border: none;">Qty</th>
+                                    <th style="padding: 14px; text-align: right; font-weight: 600; border: none;">Price</th>
+                                    <th style="padding: 14px; text-align: right; font-weight: 600; border: none;">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in cart_items %}
+                                <tr style="border-bottom: 1px solid #e0e0e0;">
+                                    <td style="padding: 14px; text-align: left; color: #22223b;">{{ item.product.name }}</td>
+                                    <td style="padding: 14px; text-align: center; color: #22223b; font-weight: 500;">{{ item.quantity }}</td>
+                                    <td style="padding: 14px; text-align: right; color: #22223b;">₹{{ item.product.price }}</td>
+                                    <td style="padding: 14px; text-align: right; color: var(--primary-color); font-weight: 600;">₹{{ item.total_price }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Total Price Summary -->
+                    <div style="background: #f0f4ff; border: 2px solid var(--primary-color); border-radius: 12px; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 1.2rem; font-weight: 600; color: #22223b;">Total Amount:</span>
+                        <span style="font-size: 1.8rem; font-weight: 700; color: var(--primary-color);">₹{{ total_price }}</span>
+                    </div>
                 
                     
-                    <h3 class="section-title">Payment</h3>
-
-                    <div class="form-check payment-option">
-                    <input 
-                        class="form-check-input" 
-                        type="radio" 
-                        name="payment-method" 
-                        value="razorpay" 
-                        id="razorpay"
-                        required
-                    >
-                    <label class="form-check-label" for="razorpay">Razorpay</label>
+                    <h3 class="section-title">Payment Method</h3>
+                    
+                    <!-- Payment Method Radio Button -->
+                    <div style="background: #f8f9fa; border: 1px solid #e0e0e0; padding: 16px; border-radius: 8px;">
+                        <div class="form-check" style="margin-bottom: 0;">
+                            <input 
+                                class="form-check-input" 
+                                type="radio" 
+                                name="payment_method" 
+                                id="razorpay" 
+                                value="razorpay" 
+                                required
+                                checked
+                                style="width: 1.25rem; height: 1.25rem; cursor: pointer; border-color: var(--primary-color);"
+                            >
+                            <label class="form-check-label" for="razorpay" style="cursor: pointer; user-select: none; margin-left: 8px; display: flex; align-items: center; gap: 12px;">
+                                <span style="font-size: 1.3rem;">💳</span>
+                                <div>
+                                    <p style="font-size: 1.05rem; font-weight: 600; margin: 0; color: #333;">Razorpay</p>
+                                    <p style="color: #666; margin: 4px 0 0 0; font-size: 0.9rem;">Card, Net Banking, Wallets - Secure & Instant</p>
+                                </div>
+                            </label>
+                        </div>
                     </div>
 
                 </div>
@@ -187,6 +232,77 @@
         </form>
         
     </div>
+
+    <script>
+        // Email validation for checkout form
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const checkoutForm = document.getElementById('checkout-form');
+
+        // Regex pattern for valid email
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        function validateEmail(email) {
+            return emailPattern.test(email.trim());
+        }
+
+        // Real-time email validation as user types
+        emailInput.addEventListener('input', function() {
+            const email = this.value.trim();
+            
+            if (email === '') {
+                emailError.style.display = 'none';
+                this.classList.remove('is-invalid');
+            } else if (!validateEmail(email)) {
+                emailError.style.display = 'block';
+                emailError.textContent = 'Please enter a valid email address (e.g., user@example.com)';
+                this.classList.add('is-invalid');
+            } else {
+                emailError.style.display = 'none';
+                this.classList.remove('is-invalid');
+            }
+        });
+
+        // Validate form on submission
+        checkoutForm.addEventListener('submit', function(e) {
+            const email = emailInput.value.trim();
+            
+            // Check if email is empty
+            if (email === '') {
+                e.preventDefault();
+                emailError.style.display = 'block';
+                emailError.textContent = 'Email address is required.';
+                emailInput.classList.add('is-invalid');
+                emailInput.focus();
+                return false;
+            }
+            
+            // Check if email is valid
+            if (!validateEmail(email)) {
+                e.preventDefault();
+                emailError.style.display = 'block';
+                emailError.textContent = 'Please enter a valid email address (e.g., user@example.com)';
+                emailInput.classList.add('is-invalid');
+                emailInput.focus();
+                return false;
+            }
+        });
+
+        // Add CSS for invalid input styling
+        const style = document.createElement('style');
+        style.textContent = `
+            .is-invalid {
+                border-color: #dc3545 !important;
+                background-color: #fff5f5 !important;
+            }
+            
+            .is-invalid:focus {
+                border-color: #dc3545 !important;
+                box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.15) !important;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 
 </body>
 </html>

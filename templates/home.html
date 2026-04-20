@@ -11,9 +11,9 @@
                 <h3>{{ obj.name }}</h3>
                 <h3>₹ {{ obj.price }}</h3>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'add_to_cart' obj.id %}" class="btn btn-outline-dark add-to-cart">Add to Cart</a>
+                    <button class="btn btn-outline-dark add-to-cart" onclick="addToCartAjax({{ obj.id }}, '{{ obj.name }}')">Add to Cart</button>
                 {% else %}
-                    <a href="#" class="btn btn-outline-dark add-to-cart" data-bs-toggle="modal" data-bs-target="#loginModal">Add to Cart</a>
+                    <button class="btn btn-outline-dark add-to-cart" data-bs-toggle="modal" data-bs-target="#loginModal">Add to Cart</button>
                 {% endif %}
                 <a href="{% url 'cart_detail' obj.id %}" class="btn btn-dark">View</a>
             </div>
@@ -21,6 +21,11 @@
         </div>
     </section>
 </main>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast-notification">
+    <span id="toast-message"></span>
+</div>
 
 <!-- Modal Structure -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -63,16 +68,115 @@
         display: flex;
         justify-content: flex-end;
     }
+
+    /* Toast Notification Styles */
+    .toast-notification {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 4px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        bottom: 30px;
+        margin-left: -125px;
+        font-size: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .toast-notification.show {
+        visibility: visible;
+        -webkit-animation: slidein 0.5s, slideout 0.5s 2.5s;
+        animation: slidein 0.5s, slideout 0.5s 2.5s;
+    }
+
+    @-webkit-keyframes slidein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes slidein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes slideout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
 </style>
 
+<script>
+function addToCartAjax(productId, productName) {
+    const formData = new FormData();
+    formData.append('product_id', productId);
+    formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+    fetch('{% url 'add_to_cart_ajax' %}', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showToast(data.message, 'success');
+        } else {
+            showToast(data.message, 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showToast('Error adding to cart', 'error');
+    });
+}
+
+function showToast(message, type = 'success') {
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toast-message');
+    
+    toastMessage.textContent = message;
+    toast.className = 'toast-notification show';
+    
+    // Auto-hide after 3 seconds
+    setTimeout(() => {
+        toast.className = 'toast-notification';
+    }, 3000);
+}
+</script>
+
 {% endblock %}
-                        font-weight: 600;
-                    }
-                    .modal-body {
-                        padding: 1.25rem 2rem;
-                    }
-                    .modal-footer {
-                        padding: 1rem 2rem;
-                        border-top: 1px solid #e0e0e0;
-                        display: flex;
-                        justify-content: flex-end;

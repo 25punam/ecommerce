@@ -13,15 +13,63 @@
             <div class="form-container">
                 <h1 class="opacity">REGISTER</h1>
                
-                <form method = "POST" action="">
+                <!-- Django Messages Framework Display -->
+                {% if messages %}
+                    <div id="messagesContainer" style="margin-bottom: 16px;">
+                        {% for message in messages %}
+                            <div style="background-color: {% if message.tags %}{% if 'error' in message.tags %}#f8d7da{% elif 'success' in message.tags %}#d4edda{% else %}#d1ecf1{% endif %}{% else %}#d1ecf1{% endif %}; border: 1px solid {% if message.tags %}{% if 'error' in message.tags %}#f5c6cb{% elif 'success' in message.tags %}#c3e6cb{% else %}#bee5eb{% endif %}{% else %}#bee5eb{% endif %}; border-radius: 8px; padding: 12px; margin-bottom: 12px; color: {% if message.tags %}{% if 'error' in message.tags %}#721c24{% elif 'success' in message.tags %}#155724{% else %}#0c5460{% endif %}{% else %}#0c5460{% endif %}; display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 1.2rem;">{% if message.tags %}{% if 'error' in message.tags %}⚠️{% elif 'success' in message.tags %}✓{% else %}ℹ️{% endif %}{% else %}ℹ️{% endif %}</span>
+                                <span>{{ message }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+                <form method="POST" action="" id="registerForm" onsubmit="return validateForm()">
                     {% csrf_token %}
-                    <input type="text" name="username" id="username" placeholder="username" required>
-                    <input type="email" name="email" id="email" placeholder="email">
-                    <input type="password" name="password" id="password" placeholder="password">
+                    
+                    <div style="display: flex; flex-direction: column;">
+                        <input 
+                            type="text" 
+                            name="username" 
+                            id="username" 
+                            placeholder="Username" 
+                            required
+                            minlength="3"
+                            title="Username must be at least 3 characters"
+                        >
+                        <span id="usernameError" class="error-message" style="display: none; color: #dc3545; font-size: 0.85rem; margin-top: 4px;"></span>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column;">
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="email" 
+                            placeholder="Email Address" 
+                            required
+                            title="Please enter a valid email address"
+                        >
+                        <span id="emailError" class="error-message" style="display: none; color: #dc3545; font-size: 0.85rem; margin-top: 4px;"></span>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column;">
+                        <input 
+                            type="password" 
+                            name="password" 
+                            id="password" 
+                            placeholder="Password" 
+                            required
+                            minlength="6"
+                            title="Password must be at least 6 characters"
+                        >
+                        <span id="passwordError" class="error-message" style="display: none; color: #dc3545; font-size: 0.85rem; margin-top: 4px;"></span>
+                    </div>
+                    
                     <button class="opacity" type="submit">SUBMIT</button>
                     <div class="register-forget opacity">
                         <a href="{% url 'user_login' %}">LOGIN</a>
-                        <!-- <a href="">FORGOT PASSWORD</a> -->
+                        <a href="{% url 'home' %}" style="margin-left: auto;">Back to Home</a>
                     </div>
                 </form>
         
@@ -111,6 +159,173 @@
           
         </style>
         <script>
+            // Debounce helper function to avoid too many AJAX requests
+            function debounce(func, delay) {
+                let timeoutId;
+                return function(...args) {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => func.apply(this, args), delay);
+                };
+            }
+
+            // Frontend validation for registration form
+            function validateForm() {
+                const username = document.getElementById('username').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value.trim();
+                
+                // Clear previous error messages
+                document.getElementById('usernameError').style.display = 'none';
+                document.getElementById('emailError').style.display = 'none';
+                document.getElementById('passwordError').style.display = 'none';
+                
+                let isValid = true;
+                
+                // Validate username
+                if (!username) {
+                    showError('usernameError', 'Username is required.');
+                    isValid = false;
+                } else if (username.length < 3) {
+                    showError('usernameError', 'Username must be at least 3 characters.');
+                    isValid = false;
+                }
+                
+                // Validate email
+                if (!email) {
+                    showError('emailError', 'Email is required.');
+                    isValid = false;
+                } else if (!isValidEmail(email)) {
+                    showError('emailError', 'Please enter a valid email address.');
+                    isValid = false;
+                }
+                
+                // Validate password
+                if (!password) {
+                    showError('passwordError', 'Password is required.');
+                    isValid = false;
+                } else if (password.length < 6) {
+                    showError('passwordError', 'Password must be at least 6 characters.');
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
+            function showError(elementId, message) {
+                const errorElement = document.getElementById(elementId);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                errorElement.style.color = '#dc3545';
+            }
+
+            function showSuccess(elementId, message) {
+                const errorElement = document.getElementById(elementId);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                errorElement.style.color = '#28a745';
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Real-time username availability check with debouncing
+            const checkUsernameAvailability = debounce(function() {
+                const username = document.getElementById('username').value.trim();
+                const error = document.getElementById('usernameError');
+                
+                // First check basic validation
+                if (!username) {
+                    showError('usernameError', 'Username is required.');
+                    return;
+                }
+                
+                if (username.length < 3) {
+                    showError('usernameError', 'Username must be at least 3 characters.');
+                    return;
+                }
+                
+                // Make AJAX request to check availability
+                fetch('{% url "check_username" %}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username: username })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.available) {
+                        showSuccess('usernameError', '✓ ' + data.message);
+                    } else {
+                        showError('usernameError', '✗ ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking username:', error);
+                    showError('usernameError', 'Error checking availability');
+                });
+            }, 500);
+
+            // Real-time email availability check with debouncing
+            const checkEmailAvailability = debounce(function() {
+                const email = document.getElementById('email').value.trim();
+                const error = document.getElementById('emailError');
+                
+                // First check basic validation
+                if (!email) {
+                    showError('emailError', 'Email is required.');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    showError('emailError', 'Please enter a valid email address.');
+                    return;
+                }
+                
+                // Make AJAX request to check availability
+                fetch('{% url "check_email" %}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.available) {
+                        showSuccess('emailError', '✓ ' + data.message);
+                    } else {
+                        showError('emailError', '✗ ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking email:', error);
+                    showError('emailError', 'Error checking availability');
+                });
+            }, 500);
+
+            // Attach input event listeners
+            document.getElementById('username').addEventListener('input', function() {
+                checkUsernameAvailability();
+            });
+
+            document.getElementById('email').addEventListener('input', function() {
+                checkEmailAvailability();
+            });
+            
+            document.getElementById('password').addEventListener('input', function() {
+                const error = document.getElementById('passwordError');
+                if (!this.value.trim()) {
+                    showError('passwordError', 'Password is required.');
+                } else if (this.value.trim().length < 6) {
+                    showError('passwordError', 'Password must be at least 6 characters.');
+                } else {
+                    error.style.display = 'none';
+                }
+            });
+            
             const themes = [
             {
                 background: "#1A1A2E",

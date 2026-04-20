@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Payment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --background: #f5f7fa;
+            --primary-color: #4f8cff;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        body {
+            background: var(--background);
+            font-family: "Poppins", Arial, sans-serif;
+            color: #22223b;
+            margin: 0;
+        }
+        .payment-container {
+            max-width: 600px;
+            margin: 48px auto;
+            padding: 32px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+        .payment-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .payment-header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        .order-details {
+            background: #f7f7f7;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .order-details p {
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+        .amount-display {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 16px;
+            background: #f0f4ff;
+            border-radius: 12px;
+            margin: 16px 0;
+        }
+        .upi-apps-section {
+            margin: 32px 0;
+        }
+        .upi-apps-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .upi-apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .upi-app-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            color: #333;
+        }
+        .upi-app-btn:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(79, 140, 255, 0.15);
+            transform: translateY(-4px);
+        }
+        .upi-app-icon {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+        .upi-app-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .upi-steps {
+            background: #f0f4ff;
+            padding: 16px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+        .upi-steps-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+        .upi-steps ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .upi-steps li {
+            margin: 8px 0;
+            font-size: 0.9rem;
+        }
+        .btn-container {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .btn-primary {
+            flex: 1;
+            background: var(--primary-color);
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+        .btn-secondary {
+            flex: 1;
+            background: #e0e0e0;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+        .upi-info {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 16px 0;
+            font-size: 0.9rem;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 24px;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-header">
+            <h1>📱 UPI Payment</h1>
+            <p>Pay directly from your preferred UPI app</p>
+        </div>
+
+        <div class="order-details">
+            <p><strong>Order ID:</strong> {{ order.id }}</p>
+            <p><strong>UPI ID:</strong> {{ upi_id }}</p>
+            <p><strong>Total Amount:</strong> <span class="amount-display">₹{{ amount }}</span></p>
+        </div>
+
+        <div class="upi-info">
+            <strong>⚠️ Important:</strong> You will be redirected to your selected UPI app. Enter your UPI PIN to complete the payment. You must return to this page after payment.
+        </div>
+
+        <div class="upi-steps">
+            <div class="upi-steps-title">How to Pay with UPI:</div>
+            <ol>
+                <li>Click on your preferred UPI app below</li>
+                <li>You'll be redirected to the app with payment details pre-filled</li>
+                <li>Verify the UPI ID ({{ upi_id }}) and amount (₹{{ amount }})</li>
+                <li>Enter your UPI PIN to complete payment</li>
+                <li>Return to this page for confirmation</li>
+            </ol>
+        </div>
+
+        <div class="upi-apps-section">
+            <div class="upi-apps-title">Select Your UPI App</div>
+            <div class="upi-apps-grid">
+                <!-- Google Pay -->
+                <a href="upi://pay?pa={{ upi_id }}&pn=ECommerce&am={{ amount }}&tn=Order%20Payment%20%23{{ order.id }}&tr={{ transaction_id }}" 
+                   class="upi-app-btn" 
+                   title="Google Pay">
+                    <div class="upi-app-icon">🔵</div>
+                    <div class="upi-app-name">Google Pay</div>
+                </a>
+
+                <!-- PhonePe -->
+                <a href="upi://pay?pa={{ upi_id }}&pn=ECommerce&am={{ amount }}&tn=Order%20Payment%20%23{{ order.id }}&tr={{ transaction_id }}" 
+                   class="upi-app-btn"
+                   title="PhonePe">
+                    <div class="upi-app-icon">🟣</div>
+                    <div class="upi-app-name">PhonePe</div>
+                </a>
+
+                <!-- PayTM -->
+                <a href="upi://pay?pa={{ upi_id }}&pn=ECommerce&am={{ amount }}&tn=Order%20Payment%20%23{{ order.id }}&tr={{ transaction_id }}" 
+                   class="upi-app-btn"
+                   title="Paytm">
+                    <div class="upi-app-icon">🔷</div>
+                    <div class="upi-app-name">Paytm</div>
+                </a>
+
+                <!-- BHIM -->
+                <a href="upi://pay?pa={{ upi_id }}&pn=ECommerce&am={{ amount }}&tn=Order%20Payment%20%23{{ order.id }}&tr={{ transaction_id }}" 
+                   class="upi-app-btn"
+                   title="BHIM">
+                    <div class="upi-app-icon">🟠</div>
+                    <div class="upi-app-name">BHIM</div>
+                </a>
+
+                <!-- WhatsApp Pay -->
+                <a href="upi://pay?pa={{ upi_id }}&pn=ECommerce&am={{ amount }}&tn=Order%20Payment%20%23{{ order.id }}&tr={{ transaction_id }}" 
+                   class="upi-app-btn"
+                   title="WhatsApp">
+                    <div class="upi-app-icon">💚</div>
+                    <div class="upi-app-name">WhatsApp Pay</div>
+                </a>
+
+                <!-- Any UPI App -->
+                <a href="upi://pay?pa={{ upi_id }}&pn=ECommerce&am={{ amount }}&tn=Order%20Payment%20%23{{ order.id }}&tr={{ transaction_id }}" 
+                   class="upi-app-btn"
+                   title="Other">
+                    <div class="upi-app-icon">➕</div>
+                    <div class="upi-app-name">Other Apps</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="{% url 'payment_cancel' %}" class="btn-secondary" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                Cancel Payment
+            </a>
+            <form method="POST" action="{% url 'upi_payment_verify' %}" style="flex: 1;">
+                {% csrf_token %}
+                <input type="hidden" name="order_id" value="{{ order.id }}">
+                <input type="hidden" name="upi_id" value="{{ upi_id }}">
+                <button type="submit" class="btn-primary" style="width: 100%; border: none;">
+                    Payment Completed ✓
+                </button>
+            </form>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Processing your payment...</p>
+        </div>
+    </div>
+
+    <script>
+        // Store UPI payment attempt in localStorage for verification
+        document.querySelectorAll('.upi-app-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                localStorage.setItem('upi_payment_initiated', 'true');
+                localStorage.setItem('upi_payment_time', new Date().getTime());
+                // UPI links will naturally redirect to the app
+            });
+        });
+
+        // Check if user returned from UPI app
+        window.addEventListener('focus', function() {
+            const paymentInitiated = localStorage.getItem('upi_payment_initiated');
+            if (paymentInitiated === 'true') {
+                console.log('User returned from UPI app');
+                // User can now click "Payment Completed" button
+            }
+        });
+    </script>
+</body>
+</html>
