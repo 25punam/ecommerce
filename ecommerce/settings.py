@@ -27,10 +27,10 @@ MEDIA_URL = "/media/"
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-$8^=p0ib)98)$d!0)d)rs*qkkg$ug8awkf6_wm(ypd!qz$z9=)"
 
-DEBUG = True
+DEBUG = False
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ecommerce-production-91c8.up.railway.app']
 
 
 # Application definition
