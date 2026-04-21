@@ -33,6 +33,12 @@ DEBUG = False
 ALLOWED_HOSTS = ["*"]
 print("✅ CORRECT SETTINGS FILE LOADED")
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://ecommerce-production-aad9.up.railway.app"
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
