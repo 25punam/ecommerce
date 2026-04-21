@@ -122,9 +122,9 @@
 
             <td>₹ {{ item.total_price }}</td>
             <td>
-                <form method="post" action="{% url 'remove_from_cart' item.product.id %}">
+                <form method="post" action="{% url 'remove_from_cart' item.product.id %}" class="remove-form">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-outline-dark">Remove</button>
+                    <button type="submit" class="btn btn-outline-dark remove-btn" onclick="disableRemoveButton(this)">Remove</button>
                 </form>
             </td>
         </tr>
@@ -139,5 +139,17 @@
     <h3>Total Amount : {{ total }}</h3>
     <a href="{% url 'checkout' %}" class="btn btn-outline-dark">Proceed to Buy</a>
 </div>
+
+<script>
+function disableRemoveButton(button) {
+    // Disable button after first click to prevent duplicate submissions
+    button.disabled = true;
+    button.style.opacity = '0.5';
+    button.style.cursor = 'not-allowed';
+    button.textContent = 'Removing...';
+    // Submit the form
+    button.form.submit();
+}
+</script>
 
 {% endblock %}

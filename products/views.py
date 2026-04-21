@@ -88,6 +88,7 @@ def update_quantity(request, product_id):
 
 @login_required(login_url='/')
 def remove_from_cart(request, product_id):
-    cart_item = CartModel.objects.get(user=request.user ,product_id=product_id)
-    cart_item.delete()
+    # Use filter().delete() instead of get().delete() for idempotency
+    # This prevents DoesNotExist error on duplicate requests (fast clicks)
+    CartModel.objects.filter(user=request.user, product_id=product_id).delete()
     return redirect('order_list')
