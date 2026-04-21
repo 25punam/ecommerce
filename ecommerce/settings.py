@@ -31,7 +31,7 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = ["*"]
-
+print("✅ CORRECT SETTINGS FILE LOADED")
 
 # Application definition
 INSTALLED_APPS = [
